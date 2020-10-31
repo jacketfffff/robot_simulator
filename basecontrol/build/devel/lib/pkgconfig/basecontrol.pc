@@ -1,0 +1,8 @@
+prefix=/home/xcy/桌面/basecontrol/build/devel
+
+Name: basecontrol
+Description: Description of basecontrol
+Version: 0.0.0
+Cflags: -I/home/xcy/桌面/basecontrol/build/devel/include -I/home/xcy/桌面/basecontrol/include -I/usr/local/include/eigen3 -I/usr/include
+Libs: -L${prefix}/lib -lyaml-cpp /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_date_time.so /usr/lib/x86_64-linux-gnu/libboost_thread.so /usr/lib/x86_64-linux-gnu/libboost_chrono.so /usr/lib/x86_64-linux-gnu/libboost_atomic.so /usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: roscpp rospy std_msgs geometry_msgs sensor_msgs nav_msgs tf

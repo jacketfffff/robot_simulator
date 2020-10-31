@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/xcy/catkin_ws/devel/include/**",
+                "/home/xcy/cartographer_ws/install_isolated/include/**",
+                "/opt/ros/kinetic/include/**",
+                "/home/xcy/catkin_ws/src/basecontrol/include/**",
+                "/home/xcy/imu_ws/src/code_utils/include/**",
+                "/home/xcy/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

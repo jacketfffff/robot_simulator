@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" 
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+    	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+    	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"	
+        name="wheel_foot_robot">
+  <xacro:arg name="gpu" default="false"/>
+  <xacro:property name="gpu" value="$(arg gpu)" />
+
+  <xacro:include filename="$(find assembly)/urdf/robot.gazebo" />
+  
+
+  <link name="world"/>
+
+  <joint name="base_connected2_world"  type="planar">
+     <origin xyz="0 0 0.553" rpy="-1.57 0 0" />
+     <parent link="world" />
+     <child  link="base_link" />
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0 3 0"
+        rpy="0 0.1 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0001"
+        iyz="0.0"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+   <link name="W1_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.287195115520546" />
+      <inertia
+        ixx="0.000832836907978905"
+        ixy="-8.2306907084466E-13"
+        ixz="2.93777428387729E-12"
+        iyy="0.000437966335601868"
+        iyz="1.11612037971207E-12"
+        izz="0.000437966329932641" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0.108515172687917 0.485279110277683 0.126"
+      rpy="1.93411494532062 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="W1_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+
+
+  <link
+    name="W2_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.287195115520546" />
+      <inertia
+        ixx="0.000832836907978904"
+        ixy="-8.23073556725101E-13"
+        ixz="2.93777749334848E-12"
+        iyy="0.000437966335601868"
+        iyz="1.11612038521778E-12"
+        izz="0.00043796632993264" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="0.108515172688168 0.485279110277728 -0.126"
+      rpy="3.12733988546294 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="W2_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="W3_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0770861160413619" />
+      <inertia
+        ixx="2.97268485871718E-05"
+        ixy="2.5410988417629E-21"
+        ixz="-1.59580831175253E-20"
+        iyy="2.97268485871718E-05"
+        iyz="-1.11056369965151E-20"
+        izz="5.532802779989E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.752941176470588 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="-0.124380455219949 0.515705341337776 0.126"
+      rpy="0 0 2.54661249212373" />
+    <parent
+      link="base_link" />
+    <child
+      link="W3_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="W4_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.077086116041362" />
+      <inertia
+        ixx="2.97268485871719E-05"
+        ixy="-2.5410988417629E-21"
+        ixz="1.47844140142988E-20"
+        iyy="2.97268485871718E-05"
+        iyz="-2.4854028217573E-20"
+        izz="5.532802779989E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.752941176470588 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="continuous">
+    <origin
+      xyz="-0.124380455220023 0.51570534133776 -0.126"
+      rpy="0 0 2.54661249212372" />
+    <parent
+      link="base_link" />
+    <child
+      link="W4_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <xacro:include filename="$(find assembly)/urdf/VLP-16.urdf.xacro"/>
+  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}">
+    <origin xyz="0 -0.23 0" rpy="1.5707 0 0" />
+  </xacro:VLP-16>
+
+  <xacro:include filename="$(find assembly)/urdf/kinect_v2.urdf.xacro" />
+    <xacro:kinect_v2  parent="base_link">
+        <origin xyz="0.1 -0.18 0"
+                rpy="-1.5707 0 0" />
+    </xacro:kinect_v2>
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <updateRate>100.0</updateRate>
+    <alwaysOn>true</alwaysOn>
+    <robotNamespace>/</robotNamespace>
+    <leftJoint>joint1</leftJoint>
+    <rightJoint>joint2</rightJoint>
+    <legacyMode>false</legacyMode>
+    <wheelSeparation>0.26</wheelSeparation>
+    <wheelDiameter>0.135</wheelDiameter>
+    <robotBaseFrame>world</robotBaseFrame>
+    <wheelTorque>10</wheelTorque>
+    <topicName>cmd_vel</topicName>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <broadcastTF>true</broadcastTF>
+  </plugin>
+</gazebo>
+</robot>
+
+
+

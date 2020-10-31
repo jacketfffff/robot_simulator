@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- materials -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+
+ <gazebo reference="W1_Link">
+    <material>Gazebo/Black</material>
+    <mu1>200</mu1>
+    <mu2>100</mu2>
+ </gazebo>
+
+ <gazebo reference="W2_Link">
+    <material>Gazebo/Black</material>
+    <mu1>200</mu1>
+    <mu2>100</mu2>
+ </gazebo>
+
+ <gazebo reference="W3_Link">
+    <material>Gazebo/Black</material>
+    <mu1>200</mu1>
+    <mu2>100</mu2>
+ </gazebo>
+
+ <gazebo reference="W4_Link">
+    <material>Gazebo/Black</material>
+    <mu1>200</mu1>
+    <mu2>100</mu2>
+ </gazebo>
+
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
+	
+    </plugin>
+  </gazebo>
+
+ 
+</robot>

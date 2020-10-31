@@ -1,0 +1,29 @@
+<launch>
+  <arg name="model" />
+  <arg name="gui" default="True" />
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default="$(find assembly)/world/example.world"/>
+
+  <param name="robot_description"
+         textfile="$(find assembly)/urdf/robot2.urdf" />
+  <param name="use_gui"
+         value="$(arg gui)" />
+
+  <node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find assembly)/urdf.rviz" />
+</launch>
