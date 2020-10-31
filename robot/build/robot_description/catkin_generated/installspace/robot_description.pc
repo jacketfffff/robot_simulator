@@ -1,0 +1,8 @@
+prefix=/home/xcy/aworkspace/robot/install
+
+Name: robot_description
+Description: Description of robot_description
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/xcy/aworkspace/robot/install/lib 
+Requires: 

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot_description</name>
+  <version>0.1.0</version>
+  <description>Robot newro description.</description>
+
+  <maintainer email="wyang916x@163.com">Yang Wang</maintainer>
+
+  <author email="wyang916x@163.com">Yang Wang</author>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>fake_localization</depend>
+  <depend>laser_filters</depend>
+  <depend>map_server</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>tf</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+</package>

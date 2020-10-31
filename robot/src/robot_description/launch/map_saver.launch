@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="map_server" type="map_saver" name="map_saver1" args="-f $(find robot_description)/maps/map" output="screen">
+	</node>
+</launch>
+

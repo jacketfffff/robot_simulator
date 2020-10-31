@@ -1,0 +1,2 @@
+robot_description
+-DCATKIN_DEVEL_PREFIX=/home/xcy/aworkspace/robot/devel -DCMAKE_INSTALL_PREFIX=/home/xcy/aworkspace/robot/install -G Unix Makefiles
